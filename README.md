@@ -1,2 +1,2 @@
 # DeNatteZeehond
-Oefenproject voor examen 
+Oefenproject voor het examen 
