@@ -1,8 +1,11 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /DeNatteZeehond/
+    RewriteRule ^(admin)($|/) - [L]
 
-RewriteCond %{REQUEST_URI}::/$1 ^(.+?)(/.*)::\2$
-RewriteCond %{DOCUMENT_ROOT}%1/public%2 -f
-RewriteRule ^(.*)$ public/$1 [END]
+    RewriteRule \.css$ - [L]
+    RewriteRule \.png$ - [L]
+    RewriteRule \.js$ - [L]
 
-RewriteCond %{REQUEST_URI}::/$1 ^(.+?)(/.*)::\2$
-RewriteRule ^(.*)$ src/index.php [END,QSA,E=ROOT:%1,E=ROUTE:%2]
+    RewriteRule ^ index.php [L]
+</IfModule>
