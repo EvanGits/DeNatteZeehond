@@ -71,10 +71,8 @@ class customer
         } else {
             return null;
         }
-<<<<<<< HEAD
-    }   
-=======
     }
+
 
     public static function getCustomerById($id): ?Customer
     {
@@ -85,7 +83,5 @@ class customer
             return new customer($row["id"], $row["name"], $row["email"], $row["phone"], $row["password"], $row["donation"], $row["customer_status_id"]);
         return null;
     }
-        
->>>>>>> dfc525cc7950aaa189dd656badc793366cbe6a1a
 }
 ?>
