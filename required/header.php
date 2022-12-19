@@ -34,6 +34,19 @@
         </div> 
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "administration") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/administration" class="nav-link bg-primary text-light fs-5">Overzicht</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">Overzicht</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div> 
+        <div class="collapse navbar-collapse" id="navmenu">    
+            <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "profile") : ?>
                     <li>
                         <a href="<?= ROOT ?>/profile" class="nav-link bg-primary text-light fs-5">Profiel</a>
@@ -45,6 +58,7 @@
                 <?php endif; ?>
             </ul>
         </div> 
+        
                     
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
