@@ -10,7 +10,7 @@ if(isset($_POST['login'])) {
 
     if($user->login($email, $password)) {
         // Successful login
-        header('location: home');
+        header("location: ". ROOT."/home");
     } else {
         // Unsuccessful login
         echo 'Invalid email or password';

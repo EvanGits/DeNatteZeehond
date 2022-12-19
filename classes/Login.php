@@ -1,10 +1,10 @@
 <?php
 class Login {
-    private $conn;
-
-    public function __construct($conn) {
-        $this->conn = $conn;
-    }
+//    private $conn;
+//
+////    public function __construct($conn) {
+////        $this->conn = $conn;
+////    }
 
     // public function login($email, $password) {
     //     $query = 'SELECT * FROM customer WHERE email = :email AND password = :password';
