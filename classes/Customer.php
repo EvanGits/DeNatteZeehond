@@ -73,6 +73,15 @@ class customer
         }
     }
 
+    public static function getCustomerById($id): ?Customer
+    {
+        $params = array(":id" => $id);
+        $sth = DBConn::PDO()->prepare("SELECT * FROM customer WHERE 'id' = :id");
+        $sth->execute($params);
+        if($row = $sth->fetch())
+            return new customer($row["id"], $row["name"], $row["email"], $row["phone"], $row["password"], $row["donation"], $row["customer_status_id"]);
+        return null;
+    }
         
 }
 ?>
