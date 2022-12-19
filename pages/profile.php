@@ -4,11 +4,11 @@
 ?>
 
 <section class="text-center mt-5">
-    <h2>Mijn Zeehond Beheren</h2>
+    <h2>Mijn<span><img style="width:3%; height:auto;" src="images/seal.png"></span><span>Beheren </span></h2>
 </section>
 
 <div class="d-flex justify-content-center mt-5 ">
-    <form class="form-horizontal p-5 rounded bg-light" method="post">
+    <form class="form-horizontal p-5 rounded primary-box-color" method="post">
         <div class="mb-3">
             <label class="form-label">Naam:</label>
             <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" disabled>
