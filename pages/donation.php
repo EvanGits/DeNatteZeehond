@@ -41,12 +41,11 @@
 
                             while ($row = $sth->fetch()) {
                             ?>
-
                             </tr>
                             <tr>
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['name']?></td>
-                                <td><?php echo $row['donation']?></td>
+                                <td>€<?php echo $row['donation']?></td>
                             </tr>
                             <?php } ?>                  
                         </tbody>
