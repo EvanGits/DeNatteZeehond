@@ -57,9 +57,21 @@
                     </li>
                 <?php endif; ?>
             </ul>
-        </div> 
-        
-                    
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "account/login") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/account/login" class="nav-link bg-primary text-light fs-5">Inloggen</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/account/login" class="nav-link text-primary border border-primary border-1 rounded fs-5">Inloggen</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
         </button>
