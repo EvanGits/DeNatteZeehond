@@ -63,7 +63,7 @@ class customer
     public static function getSpecificId(int $id): ?Customer
     {
         $params = array(":id" => $id);
-        $sth = DBConn::PDO()->prepare("SELECT `name`, `email`, `phone`, `password`, `donation`, `customer_status_id` FROM `id` = :id LIMIT 1;");
+        $sth = DBConn::PDO()->prepare("SELECT `name`, `email`, `phone`, `password`, `donation`, `customer_status_id` FROM `customer` = :id LIMIT 1;");
         $sth->execute($params);
 
         if ($row = $sth->fetch()) {
@@ -71,8 +71,6 @@ class customer
         } else {
             return null;
         }
-    }
-
-        
+    }   
 }
 ?>

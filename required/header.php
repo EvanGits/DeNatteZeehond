@@ -1,5 +1,5 @@
 <!-- user check and navbar button check-->
-<nav class="navbar bg-light navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
 
         <a style="text-decoration:none;" href="<?=ROOT?>">
