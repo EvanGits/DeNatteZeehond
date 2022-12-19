@@ -34,17 +34,17 @@
         </div> 
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "administration") : ?>
+                <?php if($page == "admin") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/administration" class="nav-link bg-primary text-light fs-5">Overzicht</a>
+                        <a href="<?= ROOT ?>/admin/overview" class="nav-link bg-primary text-light fs-5">Overzicht</a>
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">Overzicht</a>
+                        <a href="<?= ROOT ?>/admin/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">Overzicht</a>
                     </li>
                 <?php endif; ?>
             </ul>
-        </div> 
+        </div>
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "profile") : ?>

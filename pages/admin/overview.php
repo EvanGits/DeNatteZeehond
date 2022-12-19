@@ -6,7 +6,8 @@
                     <?php endif; ?>
                 </div>
         </div>
-    
+                
+        <br> <br>
 
                 <div class = "overzicht">
                 <h3>Ledenoverzicht</h3>
