@@ -7,10 +7,6 @@ body{
 .primary-box-color{
     background-color: #AEBDCA;    
 }
-.button-donatie-layout{
-
-}
-
 
 .button-color-non{
     background-color: #7895B2;
@@ -18,4 +14,9 @@ body{
 
 .button-color-pressed{
     background-color: #557697;
+}
+
+.bdr{
+    border-radius: 6px;
+    overflow: hidden;
 }

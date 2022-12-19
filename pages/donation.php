@@ -1,5 +1,5 @@
 <main>
-    <div class="container mt-5 col-12">
+    <div class="container col-12" style="margin-top: 8%;">
         <div class="row g-4 py-5">
             <div class="col-5">
                 <div class="justify-content-center">
@@ -23,8 +23,38 @@
                 </div>
             </div>
             <div class="col-7">
-                <div>
-                    hallo
+                <div class="col-lg-12">
+                    <h1 class="text-center">Top donateurs!</h1>
+                    <table class="table mt-5 bdr table-striped shadow" >
+                        <thead style="background-color: #7895B2;">
+                            <tr class="text-white">
+                                <th>Top donateurs:</th>
+                                <th>Naam:</th>
+                                <th>Bedrag:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Toon</td>
+                                <td>€500,-</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Peter</td>
+                                <td>€32,33</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>John</td>
+                                <td>€410,-</td>
+                            </tr>                    
+                        </tbody>
+                    </table>
+                    <p class="text-center mt-5">
+                        Namens ons team, bedankt voor het doneren. <br>
+                        Dankzij uw bijdragen kunnen wij onze zeehonden voorzien van een beter leven.
+                    </p>
                 </div>
             </div>            
         </div>
