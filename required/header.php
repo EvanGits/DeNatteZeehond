@@ -5,44 +5,80 @@
         <a style="text-decoration:none;" href="<?=ROOT?>">
             <h2 class="p-2 text-dark">De Natte Zeehond</h2>
         </a> 
-
-        <div class="collapse navbar-collapse" id="navmenu">    
-            <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "home" || $page == "") : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/home" class="nav-link bg-primary text-light fs-5">Home</a>
-                    </li>
-                <?php else : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/home" class="nav-link text-primary border border-primary border-1 rounded fs-5">Home</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div> 
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "donation") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/donation" class="nav-link bg-primary text-light fs-5">Doneren</a>
+                        <a href="<?= ROOT ?>/donation" class="nav-link bg-success text-light fs-5">Doneren</a>
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/donation" class="nav-link text-primary border border-primary border-1 rounded fs-5">Doneren</a>
+                        <a href="<?= ROOT ?>/donation" class="nav-link text-light bg-danger rounded fs-5">Doneren</a>
                     </li>
                 <?php endif; ?>
             </ul>
         </div> 
-
-
+        <div class="collapse navbar-collapse" id="navmenu">    
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "tickets") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/tickets" class="nav-link text-light fs-5" style="background-color: #557697;">Tickets</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/tickets" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Tickets</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">    
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "contact") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/contact" class="nav-link text-light fs-5" style="background-color: #557697;">Contact</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/contact" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Contact</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">    
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "information") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/information" class="nav-link text-light fs-5" style="background-color: #557697;">Over ons</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/information" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Over ons</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "account/login") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/account/login" class="nav-link text-light fs-5" style="background-color: #557697;">Inloggen</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/account/login" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Inloggen</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "profile") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/profile" class="nav-link bg-primary text-light fs-5">Profiel</a>
+                        <a href="<?= ROOT ?>/profile" class="nav-link text-light fs-5" style="background-color: #557697;">Profiel</a>
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/profile" class="nav-link text-primary border border-primary border-1 rounded fs-5">Profiel</a>
+                        <a href="<?= ROOT ?>/profile" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Profiel</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -51,29 +87,17 @@
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "administration/overview") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/administration/overview" class="nav-link bg-primary text-light fs-5">Overzicht</a>
+                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light fs-5" style="background-color: #557697;">Overzicht</a>
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">Overzicht</a>
+                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Overzicht</a>
                     </li>
                 <?php endif; ?>
             </ul>
         </div>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "account/login") : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/account/login" class="nav-link bg-primary text-light fs-5">Inloggen</a>
-                    </li>
-                <?php else : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/account/login" class="nav-link text-primary border border-primary border-1 rounded fs-5">Inloggen</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
+
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
