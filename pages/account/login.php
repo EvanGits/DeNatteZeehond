@@ -11,6 +11,7 @@ if(isset($_POST['login'])) {
     if($user->login($email, $password)) {
         // Successful login
         header("location: ". ROOT."/home");
+        $_SESSION["user"];
     } else {
         // Unsuccessful login
         echo 'Invalid email or password';
@@ -23,4 +24,9 @@ if(isset($_POST['login'])) {
     <input type="email" name="email" placeholder="Email">
     <input type="password" name="password" placeholder="Password">
     <button type="submit" name="login">Login</button>
+
+    <div>
+        <p class="mb-0">Don't have an account? <a href="register" class="">Sign Up</a>
+        </p>
+    </div>
 </form>
