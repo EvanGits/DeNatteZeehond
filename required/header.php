@@ -49,13 +49,13 @@
         </div>
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "overzicht/overview") : ?>
+                <?php if($page == "administration/overview") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/overzicht/overview" class="nav-link bg-primary text-light fs-5">acc</a>
+                        <a href="<?= ROOT ?>/administration/overview" class="nav-link bg-primary text-light fs-5">Overzicht</a>
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/overzicht/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">acc</a>
+                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-primary border border-primary border-1 rounded fs-5">Overzicht</a>
                     </li>
                 <?php endif; ?>
             </ul>
