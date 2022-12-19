@@ -71,11 +71,8 @@ class customer
         } else {
             return null;
         }
-<<<<<<< HEAD
-    }   
-=======
     }
-
+    
     public static function getCustomerById($id): ?Customer
     {
         $params = array(":id" => $id);
@@ -86,6 +83,5 @@ class customer
         return null;
     }
         
->>>>>>> dfc525cc7950aaa189dd656badc793366cbe6a1a
 }
 ?>
