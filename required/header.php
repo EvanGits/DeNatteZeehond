@@ -57,11 +57,6 @@
                     </li>
                 <?php endif; ?>
             </ul>
-<<<<<<< Updated upstream
-        </div> 
-        
-                    
-=======
         </div>
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="nav nav-pills nav-fill ms-auto">
@@ -77,7 +72,6 @@
             </ul>
         </div>
 
->>>>>>> Stashed changes
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
         </button>
