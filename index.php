@@ -11,6 +11,7 @@ require_once("classes/Pages.php");
 require_once("classes/Customer.php");
 require_once("classes/Status.php");
 require_once("classes/Tickets.php");
+require_once("classes/Login.php");
 
 // session_start wordt zo opgeroepen over de gehele website
 session_start();
