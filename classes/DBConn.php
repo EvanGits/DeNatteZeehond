@@ -5,5 +5,7 @@ class DBConn
     {
         return new PDO("mysql:host=sql7.freemysqlhosting.net;dbname=sql7585090", "sql7585090", "INJF57Mdk4");
     }
+        //local
+		//return new PDO("mysql:host=localhost;dbname=de-natte-zeehond;", "root", "");
 }
 ?>
