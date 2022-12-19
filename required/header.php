@@ -34,7 +34,7 @@
         </div> 
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "admin") : ?>
+                <?php if($page == "admin/overview") : ?>
                     <li>
                         <a href="<?= ROOT ?>/admin/overview" class="nav-link bg-primary text-light fs-5">Overzicht</a>
                     </li>
