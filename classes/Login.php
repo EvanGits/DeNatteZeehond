@@ -20,5 +20,15 @@ class Login {
         $sth->execute($params);
         return $sth->fetchAll();
     }
-
+    public function register($name, $email, $phone, $password)
+    {
+        $params = array(":name" =>$name, ":email"=>$email, ":phone"=>$phone, ":password"=>$password, ":donation"=>0, ":customer_status_id"=>1);
+        $sth = DBConn::PDO()->prepare("INSERT INTO customer (name, email, phone, password, donation, customer_status_id) VALUES (:name, :email, :phone, :password, :donation, :customer_status_id)");
+        $sth->execute($params);
+        return true;
+//        $query = 'INSERT INTO users (email, password, name) VALUES (:email, :password, :name)';
+//        $sth = $this->conn->prepare($query);
+//        $sth->execute(['email' => $email, 'password' => $password, 'name' => $name]);
+//        return true;
+    }
 }
