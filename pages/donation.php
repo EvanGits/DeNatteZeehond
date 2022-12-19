@@ -35,20 +35,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Toon</td>
-                                <td>€500,-</td>
+                            <?php
+                            $sth = DBConn::PDO()->prepare("SELECT * FROM customer");
+                            $sth->execute();
+
+                            while ($row = $sth->fetch()) {
+                            ?>
+
                             </tr>
                             <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>€32,33</td>
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['name']?></td>
+                                <td><?php echo $row['donation']?></td>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>€410,-</td>
-                            </tr>                    
+                            <?php } ?>                  
                         </tbody>
                     </table>
                     <p class="text-center mt-5">
