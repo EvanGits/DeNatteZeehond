@@ -10,7 +10,7 @@
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "home" || $page == "") : ?>
                     <li>
-                        <a href="<?= ROOT ?>/home" class="nav-link bg-primary    text-light fs-5">Home</a>
+                        <a href="<?= ROOT ?>/home" class="nav-link bg-primary text-light fs-5">Home</a>
                     </li>
                 <?php else : ?>
                     <li>
@@ -21,13 +21,26 @@
         </div> 
         <div class="collapse navbar-collapse" id="navmenu">    
             <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "Doneren") : ?>
+                <?php if($page == "donation") : ?>
                     <li>
                         <a href="<?= ROOT ?>/donation" class="nav-link bg-primary text-light fs-5">Doneren</a>
                     </li>
                 <?php else : ?>
                     <li>
                         <a href="<?= ROOT ?>/donation" class="nav-link text-primary border border-primary border-1 rounded fs-5">Doneren</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div> 
+        <div class="collapse navbar-collapse" id="navmenu">    
+            <ul class="nav nav-pills nav-fill ms-auto">
+                <?php if($page == "profile") : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/profile" class="nav-link bg-primary text-light fs-5">Profiel</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="<?= ROOT ?>/profile" class="nav-link text-primary border border-primary border-1 rounded fs-5">Profiel</a>
                     </li>
                 <?php endif; ?>
             </ul>
