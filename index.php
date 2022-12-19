@@ -8,6 +8,9 @@ const ROOT = "/DeNatteZeehond";
 // classes
 require_once("classes/DBConn.php");
 require_once("classes/Pages.php");
+require_once("classes/Customer.php");
+require_once("classes/Status.php");
+require_once("classes/Tickets.php");
 
 // session_start wordt zo opgeroepen over de gehele website
 session_start();
@@ -28,9 +31,9 @@ session_start();
         <!-- icon -->
         <?php $page = Pages::getHeader(); ?>
         <?php if ($page == "home" || $page == "") : ?>
-            <link rel="icon" href="images/">
+            <link rel="icon" href="images/seal.png">
         <?php else : ?>
-            <link rel="icon" href="../images/">
+            <link rel="icon" href="../images/seal.png">
         <?php endif; ?>
         
         <title>DeNatteZeehond</title>
