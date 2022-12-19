@@ -12,5 +12,10 @@ body{
 }
 
 
+.button-color-non{
+    background-color: #7895B2;
+}
 
-
+.button-color-pressed{
+    background-color: #557697;
+}
