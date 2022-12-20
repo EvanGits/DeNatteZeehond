@@ -98,6 +98,14 @@ class customer
         return 1;
     }
 
+    public static function selectCustomerList()
+    {
+        $sth = DBConn::PDO()->prepare("SELECT id, name, email, phone, donation FROM customer");
+        $sth->execute();
+
+        return $sth->fetchAll();
+    }
+
     public function updateCustomerById() : ?int
     {
         $params = array(":id"=>$this->id, ":name"=>$this->name, ":email"=>$this->email, ":phone"=>$this->phone);

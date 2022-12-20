@@ -16,7 +16,9 @@
                             <?php foreach (Customer::selectCustomerList() as $customer) :?>
                             <tr>
                                 <?php for ($i=0; $i<(count($customer)/2) ; $i++) : ?>
-                                    <td><?= $customer[$i]?></td>
+                                    <td><?= $customer[$i]?></td> 
+                                
+                                    
                                 <?php endfor; ?>    
                             </tr>
                             <?php endforeach; ?>                  
@@ -26,3 +28,4 @@
     </div>
 </main>
 
+<td><a href="#" class="btn btn-info">Wijzigen</a></td>
