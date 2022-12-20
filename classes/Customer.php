@@ -116,7 +116,10 @@ class customer
 
     public function updateCustomerDonation() : ?int
     {
-        $params = array(":id"=>$this->id, ":donation"=>$this->donation);
+        $params = array(
+        ":id"=>$this->id, 
+        ":donation"=>$this->donation
+        );
         $sth = DBConn::PDO()->prepare("UPDATE customer SET donation =:donation WHERE id = :id");
         $sth->execute($params);
         return $sth->rowcount();
