@@ -12,6 +12,11 @@ body{
     background-color: #7895B2;
 }
 
+.button-color-non:hover{
+    background-color: #557697;
+}
+
+
 .button-color-pressed{
     background-color: #557697;
 }
