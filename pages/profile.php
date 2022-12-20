@@ -4,7 +4,7 @@
 ?>
 
 <section class="text-center mt-5">
-    <h2>Mijn<span><img style="width:3%; height:auto;" src="images/seal.png"></span><span>Beheren </span></h2>
+    <h2>Profiel Beheren </h2>
 </section>
 
 <div class="d-flex justify-content-center mt-5">
@@ -24,6 +24,18 @@
         <div class="mb-3">
             <label class="form-label">Wachtwoord</label>
             <input class="form-control fs-4" type="password" name="name" value="<?=$customer->getPassword()?>" disabled>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="<?=ROOT?>/profile/deleteProfile?id=<?=$customer->getId()?>">
+                <button type="button" class="me-3 btn btn-lg btn-danger">
+                    Verwijderen
+                </button>
+            </a> 
+            <a href="<?=ROOT?>/profile/editProfile?id=<?=$customer->getId()?>">
+                <button type="button" class="mw-3 btn btn-lg btn-success">
+                    Aanpassen
+                </button>
+            </a> 
         </div>
     </form>
 </div>

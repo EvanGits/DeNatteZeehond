@@ -48,7 +48,7 @@ session_start();
         require_once("required/header.php");
 
         if ($page == "Login" ) {
-            require_once("pages/in-outlog/" . $page . ".php");
+            require_once("pages/account/" . $page . ".php");
         } else {
             $page = empty($page) ? "Home" : $page;
 
