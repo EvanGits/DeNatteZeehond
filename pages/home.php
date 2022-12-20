@@ -3,7 +3,7 @@
         <div class="row g-4 py-5">
             <div class="col-5">
                 <div class="justify-content-center">
-                    <div class="col-lg-10 primary-box-color shadow rounded" style="margin-top: 20%;">
+                    <div class="col-lg-10 primary-box-color shadow rounded" style="margin-top: 29.5%;">
                         <div class="wrap">
                             <img src="" alt="">
                             <div class="login-wrap text-white p5 p-md-5">

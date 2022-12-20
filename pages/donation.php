@@ -37,17 +37,16 @@ $ranking = 1;
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach (Customer::selectDonastionList() as $customer) : ?>
                             <tr>
-                            <?php foreach (Customer::selectDonastionList() as $customer) :?>
-                            </tr>
-                            <tr><?php for ($i=0; $i<(count($customer)/2) ; $i++) : ?>
-                                
-                                <?php if ($i == 0) : ?>
-                                <td><?= $ranking++ ?></td>
-                                <?php else : ?>    
-                                 
-                                <td><?= $customer[$i] ?></td>
-                                <?php endif; ?>
+                                <?php for ($i=0; $i<(count($customer)/2) ; $i++) : ?>
+                                    <?php if ($i == 0) : ?>
+                                        <td><?= $ranking++ ?></td>
+                                    <?php elseif($i == 1) : ?>
+                                        <td><?= ucwords($customer[$i])?></td>
+                                    <?php else : ?>    
+                                        <td><?= $customer[$i] ?></td>
+                                    <?php endif; ?>
                                 <?php endfor;?>     
                             </tr>
                             <?php endforeach;?>                  
