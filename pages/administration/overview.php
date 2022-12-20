@@ -10,6 +10,8 @@
                                 <th>Email:</th>
                                 <th>Telefoon:</th>
                                 <th>Bedrag:</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -20,6 +22,8 @@
                                 
                                     
                                 <?php endfor; ?>    
+                                <td><a href="#" class="btn btn-info">Wijzigen</a></td>
+                                <td><a href="#" class="btn btn-danger">Verwijderen</a></td>
                             </tr>
                             <?php endforeach; ?>                  
                         </tbody>
@@ -28,4 +32,3 @@
     </div>
 </main>
 
-<td><a href="#" class="btn btn-info">Wijzigen</a></td>
