@@ -83,5 +83,13 @@ class customer
             return new customer($row["id"], $row["name"], $row["email"], $row["phone"], $row["password"], $row["donation"], $row["customer_status_id"]);
         return null;
     }
+
+    public static function selectDonastionList()
+    {
+        $sth = DBConn::PDO()->prepare("SELECT id, name, donation FROM customer ORDER BY donation DESC");
+        $sth->execute();
+
+        return $sth->fetchAll();
+    }
 }
 ?>

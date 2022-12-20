@@ -1,3 +1,6 @@
+<?php
+$ranking = 1;
+?>
 <main>
     <div class="container col-12" style="margin-top: 8%;">
         <div class="row g-4 py-5">
@@ -35,19 +38,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <?php
-                            $sth = DBConn::PDO()->prepare("SELECT * FROM customer");
-                            $sth->execute();
-
-                            while ($row = $sth->fetch()) {
-                            ?>
+                            <?php foreach (Customer::selectDonastionList() as $customer) :?>
                             </tr>
-                            <tr>
-                                <td><?php echo $row['id'] ?></td>
-                                <td><?php echo $row['name']?></td>
-                                <td>€<?php echo $row['donation']?></td>
+                            <tr><?php for ($i=0; $i<(count($customer)/2) ; $i++) : ?>
+                                
+                                <?php if ($i == 0) : ?>
+                                <td><?= $ranking++ ?></td>
+                                <?php else : ?>    
+                                 
+                                <td><?= $customer[$i] ?></td>
+                                <?php endif; ?>
+                                <?php endfor;?>     
                             </tr>
-                            <?php } ?>                  
+                            <?php endforeach;?>                  
                         </tbody>
                     </table>
                     <p class="text-center mt-5">
