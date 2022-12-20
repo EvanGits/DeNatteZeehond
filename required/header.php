@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!-- user check and navbar button check-->
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
@@ -70,7 +71,7 @@
                 <?php endif; ?>
             </ul>
         </div>
-        <div class="collapse navbar-collapse" id="navmenu">    
+        <div class="collapse navbar-collapse" id="navmenu">
             <ul class="nav nav-pills nav-fill ms-auto">
                 <?php if($page == "profile") : ?>
                     <li>
