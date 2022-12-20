@@ -52,7 +52,13 @@ if(isset($_POST['login'])) {
             <input class="form-control fs-4" type="password" name="password">
         </div>
         <div class="mb-3">
-            <button type="submit" name="login">Login</button>
+            <button type="submit" name="login" class="me-3 btn btn-lg btn" style="background-color: #7895B2;">
+                login
+            </button>
         </div>
+            <div class="mb-3">
+                <p class="mb-0">Don't have an account? <a href="register" class="">Sign Up</a>
+                </p>
+            </div>
     </form>
 </div>
