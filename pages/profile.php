@@ -1,6 +1,5 @@
 <?php
-    $customer = Customer::getCustomerById(3);
-    print_r($customer);
+    $customer = $_SESSION["user"];
 ?>
 
 <section class="text-center mt-5">
@@ -21,9 +20,8 @@
             <label class="form-label">Telefoonnummer:</label>
             <input class="form-control fs-4" type="text" name="phone" value="<?=$customer->getPhone()?>" disabled>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Wachtwoord</label>
-            <input class="form-control fs-4" type="password" name="name" value="<?=$customer->getPassword()?>" disabled>
+        <div class="mb-3 text-center">
+            <h4>U heeft al € <?=$customer->getDonation()?> gedoneerd</h4>
         </div>
         <div class="d-flex justify-content-center">
             <a href="<?=ROOT?>/profile/deleteProfile?id=<?=$customer->getId()?>">

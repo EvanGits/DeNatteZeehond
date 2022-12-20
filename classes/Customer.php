@@ -56,8 +56,7 @@ class customer
             return new Customer($row["id"], $name, $row["email"], $row["phone"], $row["password"], $row["donation"], $row["customer_status_id"] !=0);
         } else{
             return null;   
-        }
-        
+        }      
     }
 
     public static function getSpecificId(int $id): ?Customer
@@ -72,7 +71,6 @@ class customer
             return null;
         }
     }
-    
     
     public static function getCustomerById($id): ?Customer
     {
@@ -100,12 +98,20 @@ class customer
         return 1;
     }
 
-    public static function selectCustomerList()
+    public function updateCustomerById() : ?int
     {
-        $sth = DBConn::PDO()->prepare("SELECT id, name, email, phone, donation FROM customer");
-        $sth->execute();
+        $params = array(":id"=>$this->id, ":name"=>$this->name, ":email"=>$this->email, ":phone"=>$this->phone);
+        $sth = DBConn::PDO()->prepare("UPDATE customer SET name=:name, email=:email, phone=:phone WHERE id = :id");
+        $sth->execute($params);
+        return $sth->rowcount();
+    }
 
-        return $sth->fetchAll();
+    public function updateCustomerDonation() : ?int
+    {
+        $params = array(":id"=>$this->id, ":donation"=>$this->donation);
+        $sth = DBConn::PDO()->prepare("UPDATE customer SET donation =:donation WHERE id = :id");
+        $sth->execute($params);
+        return $sth->rowcount();
     }
 }
 ?>

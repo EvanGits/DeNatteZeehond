@@ -2,7 +2,6 @@
 <!-- user check and navbar button check-->
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
-
         <a style="text-decoration:none;" href="<?=ROOT?>">
             <h2 class="p-2 text-dark">De Natte Zeehond</h2>
         </a> 
@@ -58,45 +57,64 @@
                 <?php endif; ?>
             </ul>
         </div>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "account/login") : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/account/login" class="nav-link text-light fs-5" style="background-color: #557697;">Inloggen</a>
-                    </li>
-                <?php else : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/account/login" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Inloggen</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "profile") : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/profile" class="nav-link text-light fs-5" style="background-color: #557697;">Profiel</a>
-                    </li>
-                <?php else : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/profile" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Profiel</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="navmenu">    
-            <ul class="nav nav-pills nav-fill ms-auto">
-                <?php if($page == "administration/overview") : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light fs-5" style="background-color: #557697;">Overzicht</a>
-                    </li>
-                <?php else : ?>
-                    <li>
-                        <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Overzicht</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
+        <?php if(isset($_SESSION["user"])) : ?>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="nav nav-pills nav-fill ms-auto">
+                    <?php if($page == "profile") : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/profile" class="nav-link text-light fs-5" style="background-color: #557697;">Profiel</a>
+                        </li>
+                    <?php else : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/profile" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Profiel</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <?php if($_SESSION["user"]->getcustomerStatusId() == 2) : ?>
+                <div class="collapse navbar-collapse" id="navmenu">    
+                    <ul class="nav nav-pills nav-fill ms-auto">
+                        <?php if($page == "administration/overview") : ?>
+                            <li>
+                                <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light fs-5" style="background-color: #557697;">Overzicht</a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <a href="<?= ROOT ?>/administration/overview" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Overzicht</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="nav nav-pills nav-fill ms-auto">
+                    <?php if($page == "account/login") : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/account/" class="nav-link text-light fs-5" style="background-color: #557697;">Uitloggen</a>
+                        </li>
+                    <?php else : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/account" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Uitloggen</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        <?php else: ?>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="nav nav-pills nav-fill ms-auto">
+                    <?php if($page == "account/login") : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/account/login" class="nav-link text-light fs-5" style="background-color: #557697;">Inloggen</a>
+                        </li>
+                    <?php else : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/account/login" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Inloggen</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            
+        <?php endif; ?>
 
 
 

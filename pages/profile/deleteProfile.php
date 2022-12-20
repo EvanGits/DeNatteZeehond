@@ -1,7 +1,7 @@
 <!-- information functions -->
 <?php
     $error = "";
-    $customer = Customer::getCustomerById(3);
+    $customer = Customer::getCustomerById($_GET["id"]);
             
         if(!empty($_POST))
         { 
@@ -27,15 +27,15 @@
         <form class="form-horizontal p-5 rounded primary-box-color shadow" method="post">
             <div class="mb-3">
                 <label class="form-label">Voer uw wachtwoord in:</label>
-                <input type="text" name="password" class="form-control fs-4">
+                <input type="password" name="password" class="form-control fs-4">
             </div>
             <div class="d-flex justify-content-center">
-                <a href="<?=ROOT?>/profile/profile2?id=<?=$customer->getId()?>">
-                        <button type="button" class="me-3 btn btn-lg button-color-pressed">
+                <a href="<?=ROOT?>/profile?id=<?=$customer->getId()?>">
+                        <button type="button" class="me-3 btn btn-lg text-light button-color-pressed">
                             Terug
                         </button>
                 </a>
-                <input class="btn btn-danger btn-lg" type="submit" name="delete" value="Verwijderen">
+                <input class="btn btn-danger btn-lg" type="submit" value="Verwijderen">
             </div>
         </form>
         <?php if(!empty($error)) {echo $error;}?>

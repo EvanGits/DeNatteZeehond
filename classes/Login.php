@@ -1,5 +1,6 @@
 <?php
 class Login {
+    
 //    private $conn;
 //
 ////    public function __construct($conn) {
@@ -13,12 +14,15 @@ class Login {
     //     return $stmt->fetch(PDO::FETCH_ASSOC);
     // }
 
-    public static function login($email, $password)
+    public static function login($email, $password) : ?Customer
     {
         $params = array(":email"=>$email, ":password"=>$password);
         $sth = DBConn::PDO()->prepare("SELECT * FROM customer WHERE email = :email AND password = :password");
         $sth->execute($params);
-        return $sth->fetchAll();
+
+        if($row = $sth->fetch())
+            return Customer::getCustomerById($row["id"]);
+        return null;
     }
     public function register($name, $email, $phone, $password)
     {

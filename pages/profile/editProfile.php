@@ -1,6 +1,21 @@
 <?php
-    $customer = Customer::getCustomerById(3);
-    print_r($customer);
+    $customer = Customer::getCustomerById($_GET["id"]);
+
+    if(!empty($_POST))
+    { 
+        //delete function
+        $login = Login::login($customer->getEmail(),$_POST["password"]);
+        if($login)
+        {
+            $customer->updateCustomerById();
+            header("Location: ". ROOT . "/profile?id=");
+        }
+        else 
+        {
+            $error = "het wachtwoord is onjuist";    
+        }
+       
+    }
 ?>
 
 <section class="text-center mt-5">
@@ -23,7 +38,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Wachtwoord</label>
-            <input class="form-control fs-4" type="password" name="name" value="<?=$customer->getPassword()?>" required>
+            <input class="form-control fs-4" type="password" name="name" required>
         </div>
         <div class="d-flex justify-content-center">
             <a href="<?=ROOT?>/profile?id=<?=$customer->getId()?>">
@@ -31,7 +46,7 @@
                     Terug
                 </button>
             </a>
-            <input class="mw-3 btn btn-lg text-light btn-success" type="submit" name="change" value="Veranderen"> 
+            <input class="mw-3 btn btn-lg text-light btn-success" type="submit" value="Veranderen"> 
         </div>
     </form>
 </div>

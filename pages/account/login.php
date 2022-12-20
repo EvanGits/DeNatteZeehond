@@ -37,7 +37,7 @@ if(isset($_POST['login'])) {
 <!--</form>-->
 
 <section class="text-center mt-5">
-    <h2>Login<span><img style="width:3%; height:auto;" src="../../images/seal.png"></span><span>Account </span></h2>
+    <h2>Login<span><img style="width:3%; height:auto;" src="../images/seal.png"></span><span>Account </span></h2>
 </section>
 
 
