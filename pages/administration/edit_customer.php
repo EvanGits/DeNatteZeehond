@@ -1,3 +1,8 @@
+<?php
+$customer= Customer::getCustomerById($_GET['id']); 
+
+?>
+
 <main>
 <div class= "container col-6">
     <div class="col-12 mt-5">
@@ -7,17 +12,17 @@
                     <form action="form" method="POST">
                             <div class="form group"> 
                                 <label class="form-label">Naam:</label>
-                                <input class= "form-control" name="name" placeholder="Wijzig hier je naam"  value="<?php echo $params['name'];?> type="text" required> 
+                                <input class= "form-control" name="name" placeholder="Wijzig hier je naam"  value="<?= $customer->getName();?>" type="text" required> 
                             </div>
                             <br>
                             <div class="form group"> 
                                 <label class="form-label">Email:</label>
-                                <input class= "form-control" name="email" placeholder="Wijzig hier je email" value="<?php echo $params['name'];?> type="text" required> 
+                                <input class= "form-control" name="email" placeholder="Wijzig hier je email" value="<?= $customer->getEmail();?>" type="text" required> 
                             </div>
                             <br>
                             <div class="form group"> 
                                 <label class="form-label">Telefoon:</label>
-                                <input class= "form-control" name="phone" placeholder="Wijzig hier je telefoon" value="<?php echo $params['name'];?>  type="tel" required> 
+                                <input class= "form-control" name="phone" placeholder="Wijzig hier je telefoon" value="<?= $customer->getPhone();?>"  type="tel" required> 
                             </div>
                             <br>
                             <div class="modal-footer mt-4"> 

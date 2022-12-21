@@ -96,6 +96,7 @@ class customer
         $sth = DBConn::PDO()->prepare("DELETE FROM customer WHERE id = :id");
         $sth->execute($params);
         return 1;
+        
     }
 
     public static function selectCustomerList()
