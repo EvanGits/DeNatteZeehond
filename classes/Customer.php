@@ -2,7 +2,7 @@
 
 class customer
 {
-    private function __construct(
+    public function __construct(
         private int $id,
         private string $name,
         private string $email,
@@ -108,8 +108,15 @@ class customer
 
     public function updateCustomerById() : ?int
     {
-        $params = array(":id"=>$this->id, ":name"=>$this->name, ":email"=>$this->email, ":phone"=>$this->phone);
-        $sth = DBConn::PDO()->prepare("UPDATE customer SET name=:name, email=:email, phone=:phone WHERE id = :id");
+        $params = array(
+            ":id"=>$this->id, 
+            ":name"=>$this->name, 
+            ":email"=>$this->email, 
+            ":phone"=>$this->phone, 
+            ":password"=>$this->password, 
+            ":donation"=>$this->donation, 
+            ":customer_status_id"=>$this->customerStatusId);
+        $sth = DBConn::PDO()->prepare("UPDATE customer SET name=:name, email=:email, phone=:phone, password=:password, donation=:donation, customer_status_id=:customer_status_id WHERE id = :id");
         $sth->execute($params);
         return $sth->rowcount();
     }
