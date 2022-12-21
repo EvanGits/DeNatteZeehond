@@ -1,5 +1,21 @@
 <?php
 $ranking = 1;
+
+if (isset($_SESSION['user'])) {
+    $user = Customer::getCustomerById($_SESSION['user']->getId());
+    $donation = $_SESSION['user'];
+
+
+    if (isset($_POST["update"])) {
+        (new Customer($_SESSION["user"]->getId(), $_SESSION["user"]->getName(), $_SESSION["user"]->getEmail(), $_SESSION["user"]->getPhone(), $_SESSION["user"]->getPassword(), $_POST["donation"], $_SESSION["user"]->getcustomerStatusId()))->updateCustomerById();
+       echo 1;
+        // header("Location: ". ROOT . "/donation");
+}
+}
+
+
+
+
 ?>
 <main>
     <div class="container col-12" style="margin-top: 8%;">
@@ -14,10 +30,10 @@ $ranking = 1;
                                 <img src="./images/seal.png" class="mt-5 mx-auto d-flex" width="150vh" height="150vh">
                                 <form method="post" class="form">
                                     <div class="form-group mt-5">
-                                        <input type="number" id="Bedrag" class="form-control" name="bedrag" placeholder="Bedrag" required>
+                                        <input type="number" name="donation" class="form-control" placeholder="Bedrag" required>
                                     </div>
                                     <div class="form-group mt-2">
-                                        <button type="submit" class="form-control btn bg-success text-white shadow rounded mt-2"><h4>Doneren</h4></button>
+                                        <button type="submit" name="update" class="form-control btn bg-success text-white shadow rounded mt-2"><h4>Doneren</h4></button>
                                     </div>
                                 </form>
                             </div>
@@ -31,7 +47,7 @@ $ranking = 1;
                     <table class="table mt-5 bdr table-striped shadow" >
                         <thead style="background-color: #7895B2;">
                             <tr class="text-white">
-                                <th>Top donateurs:</th>
+                                <th>Top donateurs:</th> 
                                 <th>Naam:</th>
                                 <th>Bedrag:</th>
                             </tr>
@@ -44,8 +60,10 @@ $ranking = 1;
                                         <td><?= $ranking++ ?></td>
                                     <?php elseif($i == 1) : ?>
                                         <td><?= ucwords($customer[$i])?></td>
+                                    <?php elseif($i == 2) : ?>
+                                        <td>€<?=$customer[$i]?></td>    
                                     <?php else : ?>    
-                                        <td><?= $customer[$i] ?></td>
+                                        <td><?= $customer[$i]?></td>
                                     <?php endif; ?>
                                 <?php endfor;?>     
                             </tr>
