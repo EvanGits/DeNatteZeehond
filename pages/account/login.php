@@ -37,7 +37,7 @@ if(isset($_POST['login'])) {
 <!--</form>-->
 
 <section class="text-center mt-5">
-    <h2>Login<span><img style="width:3%; height:auto;" src="../images/seal.png"></span><span>Account </span></h2>
+    <h2>Mijn<span><img style="width:3%; height:auto;" src="../images/seal.png"></span><span>Account </span></h2>
 </section>
 
 
@@ -48,7 +48,7 @@ if(isset($_POST['login'])) {
             <input class="form-control fs-4" type="email" name="email">
         </div>
         <div class="mb-3">
-            <label class="form-label">Wachtwoord</label>
+            <label class="form-label">Wachtwoord:</label>
             <input class="form-control fs-4" type="password" name="password">
         </div>
         <div class="mb-3">
@@ -56,8 +56,8 @@ if(isset($_POST['login'])) {
                 login
             </button>
         </div>
-            <div class="mb-3">
-                <p class="mb-0">Don't have an account? <a href="register" class="">Sign Up</a>
+            <div class="mb-0">
+                <p class="mb-0">Heb je nog geen account? <a href="register" class="">Maak Aan</a>
                 </p>
             </div>
     </form>

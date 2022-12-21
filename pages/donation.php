@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])) {
                                     <?php elseif($i == 1) : ?>
                                         <td><?= ucwords($customer[$i])?></td>
                                     <?php elseif($i == 2) : ?>
-                                        <td>€<?=$customer[$i]?></td>    
+                                        <td>€<?=$customer[$i]?>,-</td>
                                     <?php else : ?>    
                                         <td><?= $customer[$i]?></td>
                                     <?php endif; ?>
