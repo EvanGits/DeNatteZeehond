@@ -10,7 +10,7 @@
             if($login)
             {
                 $customer->deleteCustomerById();
-                header("Location: ". ROOT . "/home");
+                header("Location: ". ROOT . "/account/logout");
             }
             else 
             {
@@ -37,6 +37,11 @@
                 </a>
                 <input class="btn btn-danger btn-lg" type="submit" value="Verwijderen">
             </div>
+            <div class="text-center text-danger mt-3">
+                <h5>
+                <?php if(!empty($error)) {echo $error;}?>
+                </h5>
+            </div>
         </form>
-        <?php if(!empty($error)) {echo $error;}?>
+        
     </div>
