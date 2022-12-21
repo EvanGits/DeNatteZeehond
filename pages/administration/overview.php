@@ -23,7 +23,7 @@
                                     
                                 <?php endfor; ?>    
                                 <td><a href="<?= ROOT ?>/administration/edit_customer" class="btn btn-info">Wijzigen</a></td>
-                                <td><a href="#" onclick="return confirm('Weet je zeker dat je dit account wil verwijderen?')" class="btn btn-danger">Verwijderen</a></td>
+                                <td><a href="<?= ROOT ?>/administration/delete_customer" onclick="return confirm('Weet je zeker dat je dit account wil verwijderen?')" class="btn btn-danger">Verwijderen</a></td>
                             </tr>
                             <?php endforeach; ?>                   
                         </tbody>
