@@ -39,7 +39,7 @@
                     </li>
                 <?php else : ?>
                     <li>
-                        <a href="<?= ROOT ?>/contact" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Contact</a>
+                        <a href="<?= ROOT ?>/contact" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;        ">Contact</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -88,13 +88,13 @@
             <?php endif; ?>
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="nav nav-pills nav-fill ms-auto">
-                    <?php if($page == "account/login") : ?>
+                    <?php if($page == "account/logout") : ?>
                         <li>
-                            <a href="<?= ROOT ?>/account/" class="nav-link text-light fs-5" style="background-color: #557697;">Uitloggen</a>
+                            <a href="<?= ROOT ?>/account/logout" class="nav-link text-light fs-5" style="background-color: #557697;">Uitloggen</a>
                         </li>
                     <?php else : ?>
                         <li>
-                            <a href="<?= ROOT ?>/account" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Uitloggen</a>
+                            <a href="<?= ROOT ?>/account/logout" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Uitloggen</a>
                         </li>
                     <?php endif; ?>
                 </ul>
