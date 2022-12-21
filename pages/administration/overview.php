@@ -1,8 +1,8 @@
 <main>
-    <div class="container col-12">
+    <div class="container-lg col-12">
         <div class="col-12 mt-5">
-        <h1 class="text-center">Overzicht</h1>
-                    <table class="table mt-5 bdr table-striped shadow" >
+            <h1 class="text-center">Overzicht</h1>
+                    <table class="table  mt-5 bdr rounded table-striped shadow">
                         <thead style="background-color: #7895B2;">
                             <tr class="text-white">
                                 <th>Id:</th>
@@ -22,10 +22,10 @@
                                 
                                     
                                 <?php endfor; ?>    
-                                <td><a href="edit_customer.php" class="btn btn-info">Wijzigen</a></td>
-                                <td><a href="" class="btn btn-danger">Verwijderen</a></td>
+                                <td><a href="<?= ROOT ?>/administration/edit_customer" class="btn btn-info">Wijzigen</a></td>
+                                <td><a href="#" onclick="return confirm('Weet je zeker dat je dit account wil verwijderen?')" class="btn btn-danger">Verwijderen</a></td>
                             </tr>
-                            <?php endforeach; ?>                  
+                            <?php endforeach; ?>                   
                         </tbody>
                     </table>
         </div>
