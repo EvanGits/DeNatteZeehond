@@ -84,7 +84,7 @@ class customer
 
     public static function selectDonastionList()
     {
-        $sth = DBConn::PDO()->prepare("SELECT id, name, donation FROM customer ORDER BY donation DESC");
+        $sth = DBConn::PDO()->prepare("SELECT id, name, donation FROM customer ORDER BY donation DESC LIMIT 5");
         $sth->execute();
 
         return $sth->fetchAll();
