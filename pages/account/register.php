@@ -7,15 +7,18 @@ if(isset($_POST['register'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $password = $_POST['password'];
-    $password2 = $_POST['password2'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password2 = password_hash($_POST['password2'], PASSWORD_DEFAULT);
 
-    if($user->register($name, $email, $phone, $password)) {
-        // Successful registration
-        header("location: ". ROOT."/home");
-    } else {
-        // Unsuccessful registration
-        echo 'Error registering';
+    if ($_POST["password"] == $_POST["password2"] && strlen($_POST["password"])>=8) {
+        if ($user->register($name, $email, $phone, $password)) {
+
+            // Successful registration
+            header("location: " . ROOT . "/home");
+        } else {
+            // Unsuccessful registration
+            echo 'Error registering';
+        }
     }
 }
 ?>
