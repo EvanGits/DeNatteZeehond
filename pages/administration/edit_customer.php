@@ -27,7 +27,7 @@ $customer= Customer::getCustomerById($_GET['id']);
                             <br>
                             <div class="modal-footer mt-4"> 
                                 <a href="<?= ROOT ?>/administration/overview" button type="button" class="btn btn-secondary">Annuleren</a>
-                                <button type="submit" name="submit" class="btn btn-primary ms-3">Opslaan</a>
+                                <button type="submit" name="update" class="btn btn-primary ms-3">Opslaan</a>
                             </div>
                     </form>
                 </form>

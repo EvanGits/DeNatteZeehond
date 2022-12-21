@@ -23,7 +23,7 @@
                                     
                                 <?php endfor; ?>    
                                 <td><a href="<?= ROOT ?>/administration/edit_customer?id=<?= $customer['id']?> " class="btn btn-info">Wijzigen</a></td>
-                                <td><a href="<?= ROOT ?>/administration/delete_customer.php?id=<? $customer['id']?>" onclick="return confirm('Weet je zeker dat je dit account wil verwijderen?')" class="btn btn-danger">Verwijderen</a></td>
+                                <td><a href="<?= ROOT ?>/administration/delete_customer" class="btn btn-danger">Verwijderen</a></td>
                             </tr>
                             <?php endforeach; ?>                   
                         </tbody>

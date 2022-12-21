@@ -1,5 +1,21 @@
 <?php
+$id = $_GET['id']; 
 
+if(is_post_request()) {
+
+    $_SESSION['message'] = 'De klant is succesvol verwijderd.'
+    redirect_to(url_for('/administration/overview'))
+
+}else{
+
+}
+
+
+
+// $customer= Customer::getCustomerById($_GET['id']); 
+
+// $customer = new customer();
+// $customer->deleteCustomerById();
 ?>
     <div class="container"> 
         <div class="row"> 
@@ -11,34 +27,3 @@
 
         </div>
     </div>
-
-
-
-
-
-
-
-<?php
-// if (isset($_POST['submit'])) {
-
-// }else if($_GET['send'] === 'del') {
-//     $id = $_GET['id'];
-
-//     $posts->deleteCustomerById($id); 
-// }
-?>
-
-<?php 
-//$database = new DBConn();
-?> 
-
-<?php //if(isset($_GET['id']) && is_numeric($_GET['id']) ): ?>
-
-<?php //$row = $db->getCustomerById("customer", $_GET['id']); ?>
-<?php //if($row): ?>
-
-
-<?php //echo $db->deleteCustomerById("customer", $row['id']); ?>
-
-<?//php endif; ?>
-<?//php endif; ?>
