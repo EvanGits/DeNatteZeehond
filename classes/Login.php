@@ -16,14 +16,29 @@ class Login {
 
     public static function login($email, $password) : ?Customer
     {
-        $params = array(":email"=>$email, ":password"=>$password);
-        $sth = DBConn::PDO()->prepare("SELECT * FROM customer WHERE email = :email AND password = :password");
+        $params = array(":Email" => $email);
+        $sth = DBConn::PDO()->prepare("SELECT * FROM `customer` WHERE email = :Email");
         $sth->execute($params);
 
         if($row = $sth->fetch())
-            return Customer::getCustomerById($row["id"]);
+
+            if ($sth->rowCount() > 0) {
+                if (password_verify($password, $row["password"])) {
+                    return Customer::getCustomerById($row["id"]);
+                }
+            }
         return null;
     }
+
+    public static function password()
+    {
+        if ($sth->rowCount() > 0) {
+            if (password_verify($password, $row["password"])) {
+                return new Login($row["id"], $row["name"], $row["email"], $row["phone"], $row["password"], $row["customer_status_id"]);
+            }
+        }
+    }
+
     public function register($name, $email, $phone, $password)
     {
         $params = array(":name" =>$name, ":email"=>$email, ":phone"=>$phone, ":password"=>$password, ":donation"=>0, ":customer_status_id"=>1);
