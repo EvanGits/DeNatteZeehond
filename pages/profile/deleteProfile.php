@@ -31,9 +31,9 @@
             </div>
             <div class="d-flex justify-content-center">
                 <a href="<?=ROOT?>/profile?id=<?=$customer->getId()?>">
-                        <button type="button" class="me-3 btn btn-lg text-light button-color-pressed">
-                            Terug
-                        </button>
+                    <button type="button" class="me-3 btn btn-lg text-light button-color-pressed">
+                        Terug
+                    </button>
                 </a>
                 <input class="btn btn-danger btn-lg" type="submit" value="Verwijderen">
             </div>

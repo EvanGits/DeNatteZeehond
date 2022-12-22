@@ -4,10 +4,9 @@
     <div class="container">
         <a style="text-decoration:none;" href="<?=ROOT?>">
             <h2 class="p-2 text-dark">De Natte Zeehond</h2>
-        </a>
-
-        <ul class="navbar-nav ml-auto w-50">
-            <div class="collapse navbar-collapse" id="navmenu">
+        </a> 
+        <ul class="nav nav-fill ms-auto">
+            <div class="collapse navbar-collapse" id="navmenu">    
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "donation") : ?>
                         <li>
@@ -19,21 +18,8 @@
                         </li>
                     <?php endif; ?>
                 </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="nav nav-pills nav-fill ms-auto">
-                    <?php if($page == "tickets") : ?>
-                        <li>
-                            <a href="<?= ROOT ?>/tickets" class="nav-link text-light fs-5" style="background-color: #557697;">Tickets</a>
-                        </li>
-                    <?php else : ?>
-                        <li>
-                            <a href="<?= ROOT ?>/tickets" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Tickets</a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="navmenu">
+            </div> 
+            <div class="collapse navbar-collapse" id="navmenu">    
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "contact") : ?>
                         <li>
@@ -46,7 +32,7 @@
                     <?php endif; ?>
                 </ul>
             </div>
-            <div class="collapse navbar-collapse" id="navmenu">
+            <div class="collapse navbar-collapse" id="navmenu">    
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "information") : ?>
                         <li>
@@ -60,6 +46,19 @@
                 </ul>
             </div>
             <?php if(isset($_SESSION["user"])) : ?>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="nav nav-pills nav-fill ms-auto">
+                        <?php if($page == "tickets") : ?>
+                            <li>
+                                <a href="<?= ROOT ?>/tickets" class="nav-link text-light fs-5" style="background-color: #557697;">Tickets</a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <a href="<?= ROOT ?>/tickets" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Tickets</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="nav nav-pills nav-fill ms-auto">
                         <?php if($page == "profile") : ?>
@@ -115,7 +114,6 @@
                         <?php endif; ?>
                     </ul>
                 </div>
-
             <?php endif; ?>
         </ul>
 

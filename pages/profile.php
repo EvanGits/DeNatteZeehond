@@ -21,7 +21,7 @@
             <input class="form-control fs-4" type="text" name="phone" value="<?=$customer->getPhone()?>" disabled>
         </div>
         <div class="mb-3 text-center">
-            <h4>U heeft al € <?=$customer->getDonation()?> gedoneerd</h4>
+            <h4>U heeft al € <?=number_format($customer->getDonation(),2,",",".");?> gedoneerd</h4>
         </div>
         <div class="d-flex justify-content-center">
             <a href="<?=ROOT?>/profile/deleteProfile?id=<?=$customer->getId()?>">

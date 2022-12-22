@@ -41,7 +41,7 @@ class customer
         return $this->donation;
     }
 
-    public function getcustomerStatusId(): string
+    public function getcustomerStatusId(): int
     {
         return $this->customerStatusId;
     }
@@ -118,17 +118,6 @@ class customer
             ":donation"=>$this->donation, 
             ":customer_status_id"=>$this->customerStatusId);
         $sth = DBConn::PDO()->prepare("UPDATE customer SET name=:name, email=:email, phone=:phone, password=:password, donation=:donation, customer_status_id=:customer_status_id WHERE id = :id");
-        $sth->execute($params);
-        return $sth->rowcount();
-    }
-
-    public static function updateCustomerDonation(int $id, string $donation) : ?int
-    {
-        $params = array(
-        ":id"=> $id, 
-        ":donation"=> $donation
-        );
-        $sth = DBConn::PDO()->prepare("UPDATE customer SET donation =:donation WHERE id = :id");
         $sth->execute($params);
         return $sth->rowcount();
     }
