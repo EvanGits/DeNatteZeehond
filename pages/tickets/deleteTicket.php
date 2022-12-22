@@ -5,7 +5,7 @@ $customer = Customer::getCustomerById($ticket->getCustomer_id());
 
 if(!empty($_POST["delete"]))
 {
-    if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) 
+    if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 1) 
     {
         //delete function if admin
         $ticket->deleteTicketById();
@@ -14,7 +14,7 @@ if(!empty($_POST["delete"]))
     else
     {
         //delete function if member
-        $login = Login::login($customer->getEmail(),$_POST["password"]);
+        $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
         if($login)
         {
             $ticket->deleteTicketById();
@@ -50,7 +50,7 @@ if(!empty($_POST["delete"]))
             <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" disabled>
         </div>
         <!-- member check -->
-        <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 1) : ?>
+        <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>
             <div class="mb-3">
                 <label class="form-label">Voer uw wachtwoord in:</label>
                 <input class="form-control fs-4" type="password" name="password" required>

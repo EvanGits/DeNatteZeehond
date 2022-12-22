@@ -23,7 +23,7 @@ class Tickets
     public static function getAllTickets()
     {
         $sth = DBConn::PDO()->prepare("SELECT ticket.id, ticket.date, customer.name, ticket.id FROM ticket 
-        LEFT JOIN customer ON ticket.customer_id = customer.id ORDER BY ticket.date AND customer.name");
+        LEFT JOIN customer ON ticket.customer_id = customer.id ORDER BY ticket.date");
         $sth->execute();
 
         return $sth->fetchAll();
