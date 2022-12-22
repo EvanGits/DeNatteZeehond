@@ -5,8 +5,8 @@
         <a style="text-decoration:none;" href="<?=ROOT?>">
             <h2 class="p-2 text-dark">De Natte Zeehond</h2>
         </a> 
-        <ul class="nav nav-fill ms-auto">
-            <div class="collapse navbar-collapse" id="navmenu">    
+        <ul class="nav nav-fill ms-auto w-50">
+            <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "donation") : ?>
                         <li>
