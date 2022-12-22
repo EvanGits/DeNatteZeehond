@@ -49,13 +49,10 @@ if(!empty($_POST["delete"]))
             <label class="form-label">Naam:</label>
             <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" disabled>
         </div>
-        <!-- member check -->
-        <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>
             <div class="mb-3">
                 <label class="form-label">Voer uw wachtwoord in:</label>
                 <input class="form-control fs-4" type="password" name="password" required>
             </div>
-        <?php endif; ?>
         <div class="d-flex justify-content-center">
                 <a href="<?=ROOT?>/tickets">
                     <button type="button" class="me-3 btn btn-lg text-light button-color-pressed">

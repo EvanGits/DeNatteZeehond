@@ -2,20 +2,28 @@
 $ticket = Tickets::getTicketById($_GET["id"]);
 $customer = Customer::getCustomerById($ticket->getCustomer_id());
 
-if(!empty($_POST))
-{ 
-    //update function
-    $login = Login::login($customer->getEmail(),$_POST["password"]);
-    if($login)
+if(!empty($_POST["edit"]))
+{
+    if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 1) 
     {
+        //update function
         (new Tickets($ticket->getId(), $_POST['date'], $ticket->getCustomer_id()))->updateTicketById();
         header("Location: ". ROOT . "/tickets");
     }
-    else 
+    else
     {
-        $error = "het wachtwoord is onjuist";    
+        //update function if member
+        $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
+        if($login)
+        {
+            (new Tickets($ticket->getId(), $_POST['date'], $ticket->getCustomer_id()))->updateTicketById();
+            header("Location: ". ROOT . "/tickets");
+        }
+        else 
+        {
+            $error = "het wachtwoord is onjuist";    
+        }
     }
-   
 }
 ?>
 
@@ -48,7 +56,7 @@ if(!empty($_POST))
                         Terug
                     </button>
                 </a>
-                <input class="btn btn-success btn-lg" type="submit" value="Veranderen">
+                <input class="btn btn-success btn-lg" name="edit" type="submit" value="Veranderen">
             </div>
             <div class="text-center text-danger mt-3">
                 <h5>
