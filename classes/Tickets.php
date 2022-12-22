@@ -4,14 +4,14 @@ class Tickets
 {
     public function __construct(
         private int $id,
-        private $datetime,
+        private string $datetime,
         private int $customer_id,
     ){}
     public function getId()
     {
         return $this->id;
     }
-    public function getDatetime()
+    public function getDate()
     {
         return $this->datetime;
     }
@@ -22,7 +22,8 @@ class Tickets
 
     public static function getAllTickets()
     {
-        $sth = DBConn::PDO()->prepare("SELECT ticket.id, ticket.date customer.name FROM customer ORDER BY donation DESC");
+        $sth = DBConn::PDO()->prepare("SELECT ticket.id, ticket.date, customer.name, ticket.id FROM ticket 
+        LEFT JOIN customer ON ticket.customer_id = customer.id ORDER BY ticket.date AND customer.name");
         $sth->execute();
 
         return $sth->fetchAll();
@@ -54,6 +55,17 @@ class Tickets
         $sth->execute($params);
         return 1;
         
+    }
+
+    public function updateTicketById() : ?int
+    {
+        $params = array(
+            ":id"=>$this->id, 
+            ":date"=>$this->datetimee, 
+            ":customer_id"=>$this->customer_id);
+        $sth = DBConn::PDO()->prepare("UPDATE ticket SET date=:date, customer_id=:customer_id WHERE id = :id");
+        $sth->execute($params);
+        return $sth->rowcount();
     }
 }
 ?>

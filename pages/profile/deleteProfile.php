@@ -22,7 +22,7 @@
     <section class="text-center mt-5">
         <h2>Profiel verwijderen</h2>
     </section>
-    <!-- from delete match -->
+    <!-- from delete profile -->
     <div class="d-flex justify-content-center mt-5">
         <form class="form-horizontal p-5 rounded primary-box-color shadow" method="post">
             <div class="mb-3">

@@ -4,11 +4,11 @@ $customer = Customer::getCustomerById($ticket->getCustomer_id());
 
 if(!empty($_POST))
 { 
-    //delete function
+    //update function
     $login = Login::login($customer->getEmail(),$_POST["password"]);
     if($login)
     {
-        $ticket->deleteTicketById();
+        (new Tickets($ticket->getId(), $_POST['date'], $ticket->getCustomer_id()))->updateTicketById();
         header("Location: ". ROOT . "/tickets");
     }
     else 
@@ -27,16 +27,16 @@ if(!empty($_POST))
     <form class="form-horizontal p-5 rounded primary-box-color shadow" method="post">
     <div class="mb-3">
             <label class="form-label">Ticket Nummer:</label>
-            <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($ticket->getId())?>" disabled>
+            <input class="form-control fs-4" type="text" name="name" value="<?=$ticket->getId()?>" disabled>
         </div>
         <div class="mb-3">
             <label class="form-label">Datum:</label>
             <input type="datetime-local" min="<?=date("Y-m-d H:i")?>" 
-            class="form-control fs-4" name="date" value="<?=$ticket->getDatetime()?>" required>
+            class="form-control fs-4" name="date" value="<?=$ticket->getDate()?>" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Naam:</label>
-            <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" required>
+            <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" disabled>
         </div>
         <div class="mb-3">
             <label class="form-label">Voer uw wachtwoord in:</label>
@@ -48,7 +48,7 @@ if(!empty($_POST))
                         Terug
                     </button>
                 </a>
-                <input class="btn btn-danger btn-lg" type="submit" value="Verwijderen">
+                <input class="btn btn-success btn-lg" type="submit" value="Veranderen">
             </div>
             <div class="text-center text-danger mt-3">
                 <h5>
