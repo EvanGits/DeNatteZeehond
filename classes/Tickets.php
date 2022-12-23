@@ -66,6 +66,7 @@ class Tickets
         $sth->execute($params);
         return $sth->rowcount();
     }
+<<<<<<< Updated upstream
     public static function insertInToTicket($datetime, int $customer_id) 
     {
         $params = array(
@@ -76,5 +77,17 @@ class Tickets
         $sth = DBConn::PDO()->prepare("INSERT INTO ticket (date, customer_id) VALUES (:date, :customer_id)");
         $sth->execute($params);
     }
+=======
+
+    public static function getAllTicketsByName($name) : array
+    {
+        $params = array(":name" => $name);
+        $sth = DBConn::Pdo()->prepare("SELECT ticket.id, ticket.date, customer.name, ticket.id FROM ticket 
+        LEFT JOIN customer ON ticket.customer_id = customer.id WHERE customer.name = :name ORDER BY ticket.date");
+        $sth->execute($params);
+        return $sth->fetchAll();
+    }
+    
+>>>>>>> Stashed changes
 }
 ?>

@@ -13,9 +13,29 @@ $ticketDate = ""; $check = "";
     </section>     
 <?php endif; ?>
 
-<div class=" text-center mt-5">
-    <a href="<?= ROOT ?>/tickets/addTicket"> <button type="button" class="btn btn-success">Toevoegen</button></a>
-</div>
+<section class="container mt-5">
+    <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>
+        <!--search by name  -->
+        <div class="mb-3" style="float:left">
+            <form class="form-horizontal" method="post">
+                <input type="text" list="customers" class="form-control" name="customer" placeholder="Zoek op naam...">
+                <datalist id="customers">
+                    <?php foreach(Customer::selectCustomerList() as $customer) : ?>
+                        <option class="form-control fs-4" value="<?=$customer["name"]?>"></option>
+                    <?php endforeach; ?>    
+                    <input type="submit" class="btn button-color-non text-light btn-md" name="search">
+                </datalist>
+            </form>
+        </div>
+        <form class="mb-3" style="float:left" method="post">
+            <input type="submit" class="btn button-color-non text-light btn-md" name="viewAll" value="alle klanten">
+        </form>
+    <?php endif;?>  
+    <div class="mb-3 text-center" style="float:right">
+        <a href="<?= ROOT ?>/tickets/addTicket"> <button type="button" class="btn btn-success">Toevoegen</button></a>
+    </div>                    
+</section>
+
 
 
 <div class="container">
@@ -32,7 +52,11 @@ $ticketDate = ""; $check = "";
         <tbody>
             <!-- admin / member check -->
             <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>
-                <?php $ticket = Tickets::getAllTickets(); ?>
+                <?php if(isset($_POST["search"])) : ?>
+                    <?php $ticket = Tickets::getAllTicketsByName($_POST["customer"])?>
+                <?php else : ?>
+                    <?php $ticket = Tickets::getAllTickets(); ?>
+                <?php endif; ?>
             <?php else : ?>
                 <?php $ticket = Tickets::getAllTicketsById($_SESSION["user"]->getId()); ?>
             <?php endif; ?>
