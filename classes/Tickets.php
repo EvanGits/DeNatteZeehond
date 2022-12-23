@@ -60,11 +60,21 @@ class Tickets
     {
         $params = array(
             ":id"=>$this->id, 
-            ":date"=>$this->datetimee, 
+            ":date"=>$this->datetime, 
             ":customer_id"=>$this->customer_id);
         $sth = DBConn::PDO()->prepare("UPDATE ticket SET date=:date, customer_id=:customer_id WHERE id = :id");
         $sth->execute($params);
         return $sth->rowcount();
+    }
+    public static function insertInToTicket($datetime, int $customer_id) 
+    {
+        $params = array(
+            ":date"=>$datetime,
+            ":customer_id"=>$customer_id
+        );
+
+        $sth = DBConn::PDO()->prepare("INSERT INTO ticket (date, customer_id) VALUES (:date, :customer_id)");
+        $sth->execute($params);
     }
 }
 ?>
