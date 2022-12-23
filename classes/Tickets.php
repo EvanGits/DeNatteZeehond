@@ -54,7 +54,6 @@ class Tickets
         $sth = DBConn::PDO()->prepare("DELETE FROM ticket WHERE id = :id");
         $sth->execute($params);
         return 1;
-        
     }
 
     public function updateTicketById() : ?int
