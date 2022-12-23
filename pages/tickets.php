@@ -13,6 +13,10 @@ $ticketDate = ""; $check = "";
     </section>     
 <?php endif; ?>
 
+<div class=" text-center mt-5">
+    <a href="<?= ROOT ?>/tickets/addTicket"> <button type="button" class="btn btn-success">Toevoegen</button></a>
+</div>
+
 
 <div class="container">
     <table class="table mt-5 bdr shadow" >
