@@ -24,7 +24,7 @@
                 </p>
             </div>
     </div>
-    <div class="col-12 row mt-3">
+    <div class="col-12 row mt-3" style="margin-left: 3%;">
             <div class="col-4">
                 <div class="card shadow" style="width: 35vh;">
                     <img class="card-img-top" src="./images/baby-seal1.png" height="188vh" alt="Card image cap">

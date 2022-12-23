@@ -26,8 +26,6 @@ if(!empty($_POST["delete"]))
         }
     }
 }
-
-
 ?>
 
 <section class="text-center mt-5">
