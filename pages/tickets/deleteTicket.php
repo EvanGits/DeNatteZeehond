@@ -5,29 +5,18 @@ $customer = Customer::getCustomerById($ticket->getCustomer_id());
 
 if(!empty($_POST["delete"]))
 {
-    if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 1) 
+    //delete function if member
+    $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
+    if($login)
     {
-        //delete function if admin
         $ticket->deleteTicketById();
         header("Location: ". ROOT . "/tickets");
     }
-    else
+    else 
     {
-        //delete function if member
-        $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
-        if($login)
-        {
-            $ticket->deleteTicketById();
-            header("Location: ". ROOT . "/tickets");
-        }
-        else 
-        {
-            $error = "het wachtwoord is onjuist";    
-        }
+        $error = "het wachtwoord is onjuist";    
     }
 }
-
-
 ?>
 
 <section class="text-center mt-5">
@@ -49,6 +38,7 @@ if(!empty($_POST["delete"]))
             <label class="form-label">Naam:</label>
             <input class="form-control fs-4" type="text" name="name" value="<?=ucwords($customer->getName())?>" disabled>
         </div>
+        <!-- member check -->
             <div class="mb-3">
                 <label class="form-label">Voer uw wachtwoord in:</label>
                 <input class="form-control fs-4" type="password" name="password" required>

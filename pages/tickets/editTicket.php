@@ -4,25 +4,16 @@ $customer = Customer::getCustomerById($ticket->getCustomer_id());
 
 if(!empty($_POST["edit"]))
 {
-    if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 1) 
+    //update function if member
+    $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
+    if($login)
     {
-        //update function
         (new Tickets($ticket->getId(), $_POST['date'], $ticket->getCustomer_id()))->updateTicketById();
         header("Location: ". ROOT . "/tickets");
     }
-    else
+    else 
     {
-        //update function if member
-        $login = Login::login($_SESSION["user"]->getEmail(),$_POST["password"]);
-        if($login)
-        {
-            (new Tickets($ticket->getId(), $_POST['date'], $ticket->getCustomer_id()))->updateTicketById();
-            header("Location: ". ROOT . "/tickets");
-        }
-        else 
-        {
-            $error = "het wachtwoord is onjuist";    
-        }
+        $error = "het wachtwoord is onjuist";    
     }
 }
 ?>
