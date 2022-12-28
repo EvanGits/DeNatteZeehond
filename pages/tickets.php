@@ -36,8 +36,6 @@ $ticketDate = ""; $check = "";
     </div>                    
 </section>
 
-
-
 <div class="container">
     <table class="table mt-5 bdr shadow" >
         <thead style="background-color: #7895B2;">
@@ -64,7 +62,17 @@ $ticketDate = ""; $check = "";
                 <?php if($ticketDate != $ticket[$i]['date']){$check = !$check;}?>
                 <tr class="<?=($check) ? "bg-light text-dark" : "";?>">
                     <?php for ($j = 0; $j < (count($ticket[$i]) / 2); $j++) : ?>
-                        <?php if ($j == 1) : ?>
+                        <?php if($j == 0) : ?>
+                            <td>
+                                <?php if($ticket[$i][$j] < 10) : ?>
+                                    <?= date("ymd", strtotime($ticket[$i]["date"])) ?>00<?=$ticket[$i][$j]?> 
+                                <?php elseif($ticket[$i][$j] > 9 && $ticket[$i][$j] < 100) : ?>
+                                    <?= date("ymd", strtotime($ticket[$i]["date"])) ?>0<?=$ticket[$i][$j]?> 
+                                <?php else : ?>
+                                    <?= date("ymd", strtotime($ticket[$i]["date"])) ?><?=$ticket[$i][$j]?> 
+                                <?php endif; ?>
+                            </td>
+                        <?php elseif ($j == 1) : ?>
                             <td>
                                 <?= date("d-m-Y", strtotime($ticket[$i][$j])) ?>
                                 vanaf:

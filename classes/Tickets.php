@@ -85,6 +85,5 @@ class Tickets
         $sth->execute($params);
         return $sth->fetchAll();
     }
-    
 }
 ?>
