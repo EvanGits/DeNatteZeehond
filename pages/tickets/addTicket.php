@@ -17,7 +17,7 @@ print_r($_SESSION["user"]);
 <div class="d-flex justify-content-center mt-5">
     <form class="form-horizontal p-5 rounded primary-box-color shadow" method="post">
         <div class="mb-3">
-            <label for="">Email klanten:</label>
+            <label>Email klanten:</label>
             <select name="email" id="id">
                 <?php for ($i=0; $i <count($email) ; $i++) : ?>
                 <option value="<?= $email[$i]["id"] ?>"><?= $email[$i]["email"]?>
