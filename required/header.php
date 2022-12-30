@@ -1,11 +1,13 @@
 <?php ob_start(); ?>
 <!-- user check and navbar button check-->
+
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
         <a style="text-decoration:none;" href="<?=ROOT?>">
             <h2 class="p-2 text-dark">De Natte Zeehond</h2>
-        </a> 
-        <ul class="nav nav-fill ms-auto w-50">
+        </a>
+        <?php if (isset($_SESSION["user"])) : ?> 
+        <ul class="nav nav-fill navbar-expand-lg ms-auto w-60">
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "donation") : ?>
@@ -18,7 +20,25 @@
                         </li>
                     <?php endif; ?>
                 </ul>
-            </div> 
+            </div>
+        <?php else : ?>
+        <ul class="nav nav-fill navbar-expand-lg ms-auto w-50">
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="nav nav-pills nav-fill ms-auto">
+                    <?php if($page == "donation") : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/donation" class="nav-link bg-success text-light fs-5">Doneren</a>
+                        </li>
+                    <?php else : ?>
+                        <li>
+                            <a href="<?= ROOT ?>/donation" class="nav-link text-light bg-danger rounded fs-5">Doneren</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>    
+
+        <?php endif;?>
+
             <div class="collapse navbar-collapse" id="navmenu">    
                 <ul class="nav nav-pills nav-fill ms-auto">
                     <?php if($page == "contact") : ?>
