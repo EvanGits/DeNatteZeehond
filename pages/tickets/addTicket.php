@@ -5,8 +5,6 @@ if (!empty($_POST["Toevoegen"])) {
     Tickets::insertInToTicket($_POST["date"], $_POST["email"]);
     header("Location: ". ROOT . "/donation");
 }
-
-print_r($_SESSION["user"]);
 ?>
 
 <?php if ($_SESSION["user"]->getcustomerStatusId() == 2) :?>
