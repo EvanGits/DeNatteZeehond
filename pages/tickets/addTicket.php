@@ -17,16 +17,16 @@ print_r($_SESSION["user"]);
 <div class="d-flex justify-content-center mt-5">
     <form class="form-horizontal p-5 rounded primary-box-color shadow" method="post">
         <div class="mb-3">
-            <label>Email klanten:</label>
-            <select name="email" id="id">
+            <label class="form-label">Email klanten:</label>
+            <select class="form-select fs-4" name="email" id="id">
                 <?php for ($i=0; $i <count($email) ; $i++) : ?>
-                <option value="<?= $email[$i]["id"] ?>"><?= $email[$i]["email"]?>
+                <option  value="<?= $email[$i]["id"] ?>"><?= $email[$i]["email"]?>
                 </option>
                 <?php endfor;?>
             </select>        
         </div>
         <div class="mb-3">
-            <label class="form-label">Datum</label>
+            <label class="form-label">Datum:</label>
             <input type="datetime-local" min="<?=date("d-m-y H:i")?>" class="form-control fs-4" name="date" required>
         </div>
         <div class="d-flex justify-content-center">
