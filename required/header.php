@@ -47,7 +47,7 @@
                         </li>
                     <?php else : ?>
                         <li>
-                            <a href="<?= ROOT ?>/contact" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;        ">Contact</a>
+                            <a href="<?= ROOT ?>/contact" class="nav-link text-light rounded fs-5" style="background-color: #7895B2;">Contact</a>
                         </li>
                     <?php endif; ?>
                 </ul>

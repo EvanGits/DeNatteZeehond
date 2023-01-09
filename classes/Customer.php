@@ -84,7 +84,7 @@ class customer
 
     public static function selectDonastionList()
     {
-        $sth = DBConn::PDO()->prepare("SELECT id, name, donation FROM customer ORDER BY donation DESC LIMIT 5");
+        $sth = DBConn::PDO()->prepare("SELECT id, name, donation FROM customer WHERE NOT name='Anoniem' AND NOT name='admin' AND NOT email='' ORDER BY donation DESC LIMIT 5");
         $sth->execute();
 
         return $sth->fetchAll();
@@ -120,6 +120,16 @@ class customer
         $sth = DBConn::PDO()->prepare("UPDATE customer SET name=:name, email=:email, phone=:phone, password=:password, donation=:donation, customer_status_id=:customer_status_id WHERE id = :id");
         $sth->execute($params);
         return $sth->rowcount();
+    }
+
+    public static function getCustomerByName($name): ?Customer
+    {
+        $params = array(":name" => $name);
+        $sth = DBConn::PDO()->prepare("SELECT * FROM customer WHERE name = :name");
+        $sth->execute($params);
+        if($row = $sth->fetch())
+            return new customer($row["id"], $row["name"], $row["email"], $row["phone"], $row["password"], $row["donation"], $row["customer_status_id"]);
+        return null;
     }
 }
 ?>

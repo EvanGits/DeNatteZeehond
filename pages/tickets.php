@@ -40,16 +40,16 @@ $ticketDate = ""; $check = "";
     <table class="table mt-5 bdr shadow" >
         <thead style="background-color: #7895B2;">
             <tr class="text-white">
-                <th>Ticket Nummer:</th> 
-                <th>Datum:</th>
-                <th>Naam:</th>
-                <th>Wijzigen:</th>
-                <th>Verwijderen:</th>
+                <th>Ticket Nummer</th> 
+                <th>Datum</th>
+                <th>Naam</th>
+                <th>Wijzigen</th>
+                <th>Verwijderen</th>
             </tr>
         </thead>
         <tbody>
             <!-- admin / member check -->
-            <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>
+            <?php if(Customer::getCustomerById($_SESSION["user"]->getId())->getcustomerStatusId() == 2) : ?>     
                 <?php if(isset($_POST["search"])) : ?>
                     <?php $ticket = Tickets::getAllTicketsByName($_POST["customer"])?>
                 <?php else : ?>

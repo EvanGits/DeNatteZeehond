@@ -19,7 +19,7 @@ session_start();
 ?>
 <!-- html / pagina oproepen -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
     <head>
         <!-- bootstrap en eventueel eigen css -->

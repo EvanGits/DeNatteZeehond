@@ -1,5 +1,6 @@
 <?php
 $ranking = 1;
+$msg = "";
 
 if (isset($_SESSION['user'])) {
     $user = Customer::getCustomerById($_SESSION['user']->getId());
@@ -8,13 +9,18 @@ if (isset($_SESSION['user'])) {
 
     if (isset($_POST["update"])) {
         (new Customer($_SESSION["user"]->getId(), $_SESSION["user"]->getName(), $_SESSION["user"]->getEmail(), $_SESSION["user"]->getPhone(), $_SESSION["user"]->getPassword(), $_POST["donation"], $_SESSION["user"]->getcustomerStatusId()))->updateCustomerById();
-       echo 1;
-        // header("Location: ". ROOT . "/donation");
+        header("Location: ". ROOT . "/donation");
+    }
 }
+else
+{
+    $user = Customer::getCustomerByName("Anoniem");
+    if (isset($_POST["update"])) 
+    {
+        (new Customer($user->getId(), $user->getName(), $user->getEmail(), $user->getPhone(), $user->getPassword(), $_POST["donation"], $user->getcustomerStatusId()))->updateCustomerById();
+        $msg = "Bedankt voor uw donatie!";
+    }
 }
-
-
-
 
 ?>
 <main>
@@ -34,6 +40,7 @@ if (isset($_SESSION['user'])) {
                                     </div>
                                     <div class="form-group mt-2">
                                         <button type="submit" name="update" class="form-control btn bg-success text-white shadow rounded mt-2"><h4>Doneren</h4></button>
+                                        <h5 class="text-center"><?php if(!empty($msg)){ echo $msg;} ?></h5>
                                     </div>
                                 </form>
                             </div>
