@@ -101,7 +101,7 @@ class customer
 
     public static function selectCustomerList()
     {
-        $sth = DBConn::PDO()->prepare("SELECT id, name, email, phone, donation FROM customer");
+        $sth = DBConn::PDO()->prepare("SELECT id, name, email, phone, donation FROM customer WHERE NOT name='admin' ");
         $sth->execute();
 
         return $sth->fetchAll();

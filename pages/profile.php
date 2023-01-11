@@ -1,5 +1,5 @@
 <?php
-    $customer = $_SESSION["user"];
+    $customer = Customer::getCustomerById($_SESSION["user"]->getId());
 ?>
 
 <section class="text-center mt-5">
